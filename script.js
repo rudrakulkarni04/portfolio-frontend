@@ -69,51 +69,27 @@ function toggleSections() {
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contact-form");
 
-    if (!form) {
-        console.error("Form not found!");
-        return;
-    }
+    emailjs.init("ASXiIbF9iSYITJdT8");
 
-    form.addEventListener("submit", async function (event) {
+    form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const subject = document.getElementById("subject").value.trim();
-        const message = document.getElementById("message").value.trim();
+        const params = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value
+        };
 
-        const button = form.querySelector("button");
-        const originalText = button.textContent;
-
-        try {
-            button.textContent = "Sending...";
-            button.disabled = true;
-
-            const res = await fetch("https://portfolio-backend-kpm6.onrender.com/send-mail", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ name, email, subject, message })
-            });
-
-            const data = await res.json();
-
-            if (data.success) {
-                alert("Message sent successfully ✅");
-                form.reset();
-            } else {
-                alert("Failed to send message ❌");
-            }
-
-        } catch (error) {
-            console.log(error);
-            alert("Server error or backend not running ❌");
-
-        } finally {
-            button.textContent = originalText;
-            button.disabled = false;
-        }
+        emailjs.send("service_z2xetuc", "template_be4gy6m", params)
+        .then(() => {
+            alert("Message sent successfully ✅");
+            form.reset();
+        })
+        .catch((err) => {
+            console.error(err);
+            alert("Failed to send message ❌");
+        });
     });
 });
 
