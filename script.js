@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const message = document.getElementById("message").value;
 
     try {
-        const res = await fetch("http://localhost:3000/send-mail", {
+        const res = await fetch('https://portfolio-backend-kpm6.onrender.com/send-mail', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
