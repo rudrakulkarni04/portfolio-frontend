@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#Experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact-form">Contact</a>
+
+        </nav>
+    </header>
+
+
+    <div class="home">
+        <div class="leftbox">
+            <h1>Hello, I'm <span class="name">Rudraksh Kulkarni</span></h1>
+            <h2>And I'm a <span class="profession">Web Developer, Python Developer, and Data Scientist</span></h2>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/rudrakshkulkarni04" target="_blank">
+                    <img src="linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/rudrakulkarni04" target="_blank">
+                    <img src="github.png" alt="GitHub">
+                </a>
+            </div>
+
+            <button class="resume-btn" onclick="downloadResume()">Download Resume</button>
+
+
+        </div>
+
+        <div class="rightbox">
+            <img src="My Photo.jpg" alt="My Photo" class="photo">
+        </div>
+    </div>
+
+
+
+    <section id="about">
+        <div class="container">
+            <div class="about-image">
+                <img src="My Image_2.jpeg" alt="Profile">
+            </div>
+            <div class="about-content">
+                <h2>About <span>Me</span></h2>
+
+
+                <div class="about-text">
+                    <h3>Data Analyst</h3>
+                    <p>As a Data Analyst, I specialize in transforming raw data into meaningful insights that support
+                        data-driven decision-making. I have hands-on experience in data cleaning, exploratory data
+                        analysis (EDA), and data visualization using tools such as Python (Pandas, NumPy, Matplotlib)
+                        and SQL. I focus on identifying patterns, trends, and actionable insights that help improve
+                        business outcomes and problem-solving. I am passionate about working with data to uncover
+                        insights and support strategic decisions.</p>
+                </div>
+
+
+                <div class="extra-sections">
+                    <div class="about-text hidden">
+                        <h3>Software Engineer</h3>
+                        <p>I have a strong foundation in software engineering principles including object-oriented
+                            programming, problem-solving, and backend development. I have experience building efficient
+                            and scalable applications using Python and Django, and I enjoy designing clean, maintainable
+                            systems. I am continuously improving my skills in data structures, algorithms, and system
+                            design to grow as a software engineer.</p>
+                    </div>
+
+                    <div class="about-text hidden">
+                        <h3>Web Developer</h3>
+                        <p>I also develop responsive and interactive web applications using HTML, CSS, JavaScript, and
+                            React. I focus on building user-friendly interfaces and integrating them with backend
+                            services to deliver smooth digital experiences. With Django-based backend development
+                            experience, I am able to connect frontend and backend systems effectively to build
+                            full-stack applications.</p>
+                    </div>
+                </div>
+
+                <button class="btn" onclick="toggleSections()">Read More</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="projects-container">
+            <h2 class="projects-header">My Projects</h2>
+
+            <div class="projects-grid">
+
+                <!-- 1. Retail Forecasting (DATA ANALYTICS - MAIN) -->
+                <div class="card">
+                    <div class="project-details">
+                        <h3>Retail Sales Forecasting & Analysis</h3>
+                        <p class="short-info">
+                            Performed time-series analysis on retail sales data to identify trends and forecast future
+                            sales using Python.
+                        </p>
+
+                        <p class="more-info">
+                            Objective: To analyze historical retail data and predict future sales trends to support
+                            business decision-making.
+
+                            Technologies Used: Python, Pandas, NumPy, Matplotlib, Time-Series Analysis.
+
+                            Key Work: Data cleaning, exploratory data analysis (EDA), trend identification, and
+                            forecasting using statistical methods.
+
+                            Outcome: Generated insights into seasonal trends and improved understanding of demand
+                            patterns for better forecasting accuracy.
+                        </p>
+
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                </div>
+
+                <!-- 2. Play Store Data Analysis -->
+                <div class="card">
+                    <div class="project-details">
+                        <h3>Google Play Store Data Analysis</h3>
+                        <p class="short-info">
+                            Analyzed Play Store apps dataset to extract insights on ratings, categories, installs, and
+                            user behavior.
+                        </p>
+
+                        <p class="more-info">
+                            Objective: To understand app market trends and user preferences using real-world dataset.
+
+                            Technologies Used: Python, Pandas, NumPy, Matplotlib, Seaborn.
+
+                            Key Work: Cleaned dataset, handled missing values, performed EDA, and visualized trends
+                            across categories, ratings, and installs.
+
+                            Outcome: Identified top-performing app categories and key factors influencing app success.
+                        </p>
+
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                </div>
+
+                <!-- 3. AI Chatbot -->
+                <div class="card">
+                    <div class="project-details">
+                        <h3>AI Chatbot using Dialogflow CX</h3>
+                        <p class="short-info">
+                            Developed an intelligent chatbot for handling user queries using NLP and backend
+                            integration.
+                        </p>
+
+                        <p class="more-info">
+                            Objective: To build a conversational AI system capable of responding to user queries
+                            intelligently.
+
+                            Technologies Used: Dialogflow CX, Python, API integration.
+
+                            Key Work: Designed conversation flows, trained intents, and integrated backend logic using
+                            Python.
+
+                            Outcome: Improved understanding of NLP systems and real-world chatbot architecture.
+                        </p>
+
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                </div>
+
+                <!-- 4. Team Task Manager -->
+                <div class="card">
+                    <div class="project-details">
+                        <h3>Team Task Management System</h3>
+                        <p class="short-info">
+                            A full-stack web application to manage tasks, assign work, and track team productivity.
+                        </p>
+
+                        <p class="more-info">
+                            Objective: To develop a collaborative task management system for teams.
+
+                            Technologies Used: HTML, CSS, JavaScript, Django (or Flask if you used it).
+
+                            Key Work: User authentication, task assignment system, CRUD operations, and dashboard UI.
+
+                            Outcome: Improved understanding of full-stack development and backend logic handling.
+                        </p>
+
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                </div>
+
+                <!-- 5. Astrology Website (WEB DEV SUPPORT PROJECT) -->
+                <div class="card">
+                    <div class="project-details">
+                        <h3>Astrology Consultation Website</h3>
+                        <p class="short-info">
+                            A responsive website for astrology services including horoscopes and consultations.
+                        </p>
+
+                        <p class="more-info">
+                            Objective: To design a clean and responsive informational website for astrology services.
+
+                            Technologies Used: HTML, CSS, JavaScript.
+
+                            Key Work: UI design, responsive layout, navigation structure, and service presentation.
+
+                            Outcome: Strengthened frontend development and responsive design skills.
+                        </p>
+
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                </div>
+
+                <!-- 6. ML PROJECT (SIGN LANGUAGE RECOGNITION - NEW) -->
+                <div class="card">
+                    <div class="project-details">
+                        <h3>Sign Language Recognition using Machine Learning</h3>
+                        <p class="short-info">
+                            Built a machine learning model to recognize hand gestures and translate sign language into
+                            text.
+                        </p>
+
+                        <p class="more-info">
+                            Objective: To develop an assistive AI system that can interpret sign language gestures.
+
+                            Technologies Used: Python, OpenCV, TensorFlow / Scikit-learn, NumPy.
+
+                            Key Work: Dataset preprocessing, feature extraction from hand images, model training, and
+                            prediction pipeline.
+
+                            Outcome: Gained hands-on experience in computer vision and machine learning model
+                            development.
+                        </p>
+
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="Experience">
+        <h2 class="section-title">Internships</h2>
+        <div class="internship-container">
+
+            <div class="internship-card">
+                <div class="internship-header">
+                    <h3>Associate Software Engineer Intern</h3>
+                    <p class="company">Thynktech India</p>
+                </div>
+
+                <p class="duration">Oct 2025 - Apr 2026</p>
+
+                <div class="internship-details">
+                    <p>
+                        Worked in a dual role involving data analysis and software engineering tasks.
+                        Performed data cleaning, analysis, and reporting to extract actionable insights for internal
+                        platforms.
+
+                        Built and supported backend systems using Python and contributed to AI chatbot and platform
+                        features using Dialogflow CX.
+                        Assisted in improving system performance, debugging issues, and maintaining scalable application
+                        components.
+
+                        Gained hands-on experience in working with data-driven applications, API integration, and
+                        real-world software development workflows.
+                    </p>
+                </div>
+
+                <button class="read-more">Read More</button>
+            </div>
+
+            <!-- 2. Standard Learner (AI / WEB / PLATFORM) -->
+            <div class="internship-card">
+                <div class="internship-header">
+                    <h3>Platform Development Intern</h3>
+                    <p class="company">Standard Learner</p>
+                </div>
+
+                <p class="duration">Aug 2024 - Dec 2024</p>
+
+                <div class="internship-details">
+                    <p>
+                        Worked on developing AI chatbot systems using Dialogflow CX and improving conversational flows
+                        for better user interaction.
+                        Contributed to frontend development using React to enhance user interface and experience.
+
+                        Collaborated on integrating AI-driven features into web platforms and improving usability of
+                        existing systems.
+                        Gained exposure to both frontend development and AI-based platform engineering.
+                    </p>
+                </div>
+
+                <button class="read-more">Read More</button>
+            </div>
+
+            <!-- 3. CipherByte (PYTHON / BACKEND BASE) -->
+            <div class="internship-card">
+                <div class="internship-header">
+                    <h3>Python Development Intern</h3>
+                    <p class="company">CipherByte Technologies</p>
+                </div>
+
+                <p class="duration">Feb 2024 - Apr 2024</p>
+
+                <div class="internship-details">
+                    <p>
+                        Worked on Python-based development tasks focusing on backend logic, API integration, and data
+                        handling.
+                        Developed small applications and contributed to improving code efficiency and structure.
+
+                        Gained experience in debugging, problem-solving, and writing maintainable Python code while
+                        collaborating with the development team.
+                    </p>
+                </div>
+
+                <button class="read-more">Read More</button>
+            </div>
+
+        </div>
+    </section>
+
+    <form id="contact-form">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-container">
+            <div class="contact-left">
+                <h3>Let's Connect</h3>
+                <p>If you have any questions or opportunities, feel free to reach out!</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> rudrakshkulkarni4@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 9511423002</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Pune, India</p>
+                </div>
+            </div>
+            <div class="contact-right">
+                <div class="input-box">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="input-box">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="input-box">
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn1">Send Message</button>
+            </div>
+        </div>
+    </form>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+
+</html>
