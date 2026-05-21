@@ -67,25 +67,53 @@ function toggleSections() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".read-more-btn");
+    const form = document.getElementById("contact-form");
 
-    buttons.forEach((button) => {
-        button.addEventListener("click", function () {
-            const shortInfo = this.previousElementSibling.previousElementSibling;
-            const moreInfo = this.previousElementSibling;
-            
-            if (moreInfo.style.display === "none" || moreInfo.style.display === "") {
-                moreInfo.style.display = "block";  
-                shortInfo.style.display = "none";  
-                moreInfo.parentElement.style.overflowY = "auto";  
-                this.textContent = "Show Less";
+    if (!form) {
+        console.error("Form not found!");
+        return;
+    }
+
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        const button = form.querySelector("button");
+        const originalText = button.textContent;
+
+        try {
+            button.textContent = "Sending...";
+            button.disabled = true;
+
+            const res = await fetch("https://portfolio-backend-kpm6.onrender.com/send-mail", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ name, email, subject, message })
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                alert("Message sent successfully ✅");
+                form.reset();
             } else {
-                moreInfo.style.display = "none"; 
-                shortInfo.style.display = "block"; 
-                moreInfo.parentElement.style.overflowY = "hidden";  
-                this.textContent = "Read More";
+                alert("Failed to send message ❌");
             }
-        });
+
+        } catch (error) {
+            console.log(error);
+            alert("Server error or backend not running ❌");
+
+        } finally {
+            button.textContent = originalText;
+            button.disabled = false;
+        }
     });
 });
 
