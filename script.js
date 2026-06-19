@@ -32,7 +32,7 @@ function typeEffect() {
 
 /* ---------------- RESUME DOWNLOAD ---------------- */
 function downloadResume() {
-    window.location.href = "Rudraksh_Kulkarni_Resume.pdf";
+    window.location.href = "Rudraksh_Kulkarni_Resume_2026.pdf";
 }
 
 /* ---------------- ABOUT TOGGLE ---------------- */
